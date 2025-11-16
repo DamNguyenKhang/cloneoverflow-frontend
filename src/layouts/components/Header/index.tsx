@@ -6,7 +6,7 @@ import images from '~/assets/images';
 import Button from '~/components/commons/Button';
 import NavList from '~/components/commons/NavList';
 import { useState } from 'react';
-import LoginModal from '~/components/layouts/components/Header/LoginModal';
+import LoginModal from '~/layouts/components/Header/LoginModal';
 import { useAuth } from '~/hooks';
 import callApi from '~/api/axiosConfig';
 import { ME } from '~/components/commons/constants/api';

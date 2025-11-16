@@ -1,8 +1,8 @@
 import { PropsWithChildren, useCallback, useEffect, useReducer } from 'react';
-import { AuthContext } from '~/store/contexts';
+import { AuthContext } from '~/stores/contexts';
 import callApi from '~/api/axiosConfig';
 import { LOGIN, LOGOUT, ME } from '~/components/commons/constants/api';
-import reducer, { initState } from '~/store/AuthProvider/reducer';
+import reducer, { initState } from '~/stores/AuthProvider/reducer';
 import { login_action, logout_action } from './actions';
 import { ACCESS_TOKEN_KEY_STORAGE } from '~/components/commons/constants/constant';
 

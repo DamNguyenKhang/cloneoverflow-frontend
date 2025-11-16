@@ -1,6 +1,6 @@
 import Button from '~/components/commons/Button';
 import { DefaultLayout, HeaderOnlyLayout } from '~/layouts';
-import { Home } from '~/components/pages';
+import { Home } from '~/pages';
 
 import { RouteObject } from '~/types/';
 
