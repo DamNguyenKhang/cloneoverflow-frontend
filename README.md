@@ -1,73 +1,223 @@
-# React + TypeScript + Vite
+# CloneOverflow Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## ***************************************Vietnamese version***************************************
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**CloneOverflow** là một nền tảng hỏi đáp hiện đại lấy cảm hứng từ FUOverflow, phát triển bằng React, TypeScript, Vite và Material UI, dành riêng cho cộng đồng sinh viên FU.
 
-## React Compiler
+### 🚀 Tính năng nổi bật
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **Giao diện hiện đại**: Responsive, đẹp mắt với Material UI & SCSS modules.
+- **Xác thực bảo mật**: Đăng nhập, đăng ký, refresh token bằng JWT.
+- **Diễn đàn & Nhắn tin**: Đăng bài, nhắn tin trực tiếp, thông báo, hồ sơ cá nhân.
+- **Chia sẻ tài liệu**: Tìm kiếm, tải lên, quản lý tài nguyên học tập.
+- **Phân quyền**: Hỗ trợ route công khai & riêng tư, layout linh hoạt.
+- **Thông báo nhanh**: react-toastify.
+- **Tích hợp API**: Axios, xử lý lỗi & tự động refresh token.
 
-## Expanding the ESLint configuration
+### 🛠️ Công nghệ sử dụng
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19, TypeScript, Vite
+- Material UI (MUI), SCSS
+- React Router v7, Axios
+- ESLint, Prettier, react-toastify
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📦 Bắt đầu nhanh
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clone dự án:**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/nhat251/cloneoverflow-frontend.git
+cd cloneoverflow-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Cài đặt phụ thuộc:**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+# hoặc
+yarn install
 ```
+
+3. **Chạy dev:**
+
+```bash
+npm run dev
+# hoặc
+yarn dev
+```
+
+4. **Build production:**
+
+```bash
+npm run build
+# hoặc
+yarn build
+```
+
+5. **Kiểm tra code:**
+
+```bash
+npm run lint
+# hoặc
+yarn lint
+```
+
+### 📁 Cấu trúc thư mục
+
+```
+src/
+  api/        # Cấu hình Axios & helper API
+  assets/     # Ảnh, font, tài nguyên tĩnh
+  components/ # Component UI tái sử dụng
+  hooks/      # Custom React hooks
+  layouts/    # Layout (Default, HeaderOnly...)
+  pages/      # Trang (Home, Message...)
+  routes/     # Định nghĩa route
+  services/   # Xử lý nghiệp vụ, gọi API
+  stores/     # State management (Auth, context)
+  types/      # Định nghĩa TypeScript
+  App.tsx     # Entry chính
+  main.tsx    # Entry Vite
+```
+
+### 🔑 Biến môi trường
+
+Tạo file `.env` nếu cần override API:
+
+```env
+VITE_API_BASE_URL=https://localhost:7068/api/
+```
+
+### 🤝 Đóng góp
+
+1. Fork repo, tạo branch mới (`git checkout -b feature/ten-tinh-nang`)
+2. Commit thay đổi (`git commit -am 'Thêm tính năng'`)
+3. Push lên branch (`git push origin feature/ten-tinh-nang`)
+4. Tạo Pull Request
+
+### 👨‍💻 Người phát triển
+
+- [Birthday Nguyen](https://github.com/nhat251)
+- [DamNguyenKhang](https://github.com/DamNguyenKhang)
+
+### 📜 Giấy phép
+
+Dự án theo giấy phép MIT.
+
+---
+
+## ***************************************English version***************************************
+
+---
+
+> A modern Q&A forum web application inspired by FUOverflow, built with React, TypeScript, Vite, and MUI.
+
+### 🚀 Features
+
+- **Modern UI/UX**: Clean, responsive interface using Material UI and custom SCSS modules.
+- **Authentication**: JWT-based login, registration, and token refresh with secure storage.
+- **Forum & Messaging**: Post questions, direct messaging, notifications, and user profiles.
+- **Document & Resource Sharing**: Upload, search, and manage educational resources.
+- **Role-based Access**: Public and private routes, with flexible layout support.
+- **Toast Notifications**: User feedback with react-toastify.
+- **API Integration**: Axios-based API layer with robust error handling and auto-refresh.
+
+### 🛠️ Tech Stack
+
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Material UI (MUI)](https://mui.com/)
+- [React Router v7](https://reactrouter.com/)
+- [Axios](https://axios-http.com/)
+- [Sass/SCSS](https://sass-lang.com/)
+- [ESLint & Prettier](https://eslint.org/), [react-toastify](https://fkhadra.github.io/react-toastify/)
+
+### 📦 Getting Started
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/nhat251/cloneoverflow-frontend.git
+cd cloneoverflow-frontend
+```
+
+2. **Install dependencies:**
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Start the development server:**
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. **Build for production:**
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+5. **Lint & Format:**
+
+```bash
+npm run lint
+# or
+yarn lint
+```
+
+### 📁 Project Structure
+
+```
+src/
+  api/                # Axios config and API helpers
+  assets/             # Fonts, images, static assets
+  components/         # Reusable UI components
+  hooks/              # Custom React hooks
+  layouts/            # Layout wrappers (Default, HeaderOnly, etc.)
+  pages/              # Page components (Home, Message, etc.)
+  routes/             # Route definitions
+  services/           # Business logic, API services
+  stores/             # State management (Auth, contexts)
+  types/              # TypeScript types & interfaces
+  App.tsx             # Main app entry
+  main.tsx            # Vite entry point
+```
+
+### 🔑 Environment Variables
+
+Create a `.env` file for local development if you need to override API endpoints or secrets. Example:
+
+```env
+VITE_API_BASE_URL=https://localhost:7068/api/
+```
+
+### 🤝 Contributing
+
+1. Fork this repo and create your feature branch (`git checkout -b feature/your-feature`)
+2. Commit your changes (`git commit -am 'Add new feature'`)
+3. Push to the branch (`git push origin feature/your-feature`)
+4. Create a Pull Request
+
+### 👨‍💻 Maintainers
+
+- [Birthday Nguyen](https://github.com/nhat251)
+- [DamNguyenKhang](https://github.com/DamNguyenKhang)
+
+### 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+> Made with ❤️ for the FU community.
