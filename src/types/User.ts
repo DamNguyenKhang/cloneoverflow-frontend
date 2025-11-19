@@ -6,3 +6,12 @@ export default interface User {
   createdAt: string;
   email?: string;
 }
+
+export interface IUserMenu {
+  username: string;
+  avatar: string;
+  post: string;
+  point: string;
+  level: string;
+  reactionScore: string;
+}

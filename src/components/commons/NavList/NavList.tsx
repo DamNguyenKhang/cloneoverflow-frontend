@@ -2,21 +2,15 @@ import classNames from 'classnames/bind';
 import styles from './NavList.module.scss';
 import NavItem from './NavItem';
 import Menu from '~/components/Popper/Menu';
-import { ReactNode } from 'react';
 import { IMenuItem } from '~/types/Menu';
-
+import { ReactNode } from 'react';
 const cx = classNames.bind(styles);
-interface IUser {
-  username: string;
-  avatar: string;
-}
 
 interface INavItem {
   to: string;
-  title?: string;
+  title?: string,
   icon?: ReactNode;
-  user?: IUser;
-  menu?: IMenuItem[];
+  menu?: IMenuItem;
 }
 
 interface INavListProps {
@@ -27,25 +21,20 @@ function NavList({ list }: INavListProps) {
   return (
     <nav className={cx('navbar')}>
       {list.map((item, index) => {
-        const hasMenu = Array.isArray(item.menu);
 
         const navItem = (
           <NavItem
             key={index}
             to={item.to}
             icon={item.icon}
-            title={item.title ?? item.user?.username}
-            img={item.user?.avatar}
+            title={item.title}
+            img={item.menu?.user?.avatar}
           />
         );
 
-        if (!hasMenu) return navItem;
+        if (!item.menu) return navItem;
 
-        return (
-          <Menu items={item.menu ?? []}>
-            {navItem}
-          </Menu>
-        );
+        return <Menu menu={item.menu}>{navItem}</Menu>;
       })}
     </nav>
   );

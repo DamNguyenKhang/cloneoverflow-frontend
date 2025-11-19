@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
 import Button from "~/components/commons/Button";
 import styles from './Menu.module.scss';
-import { IMenuItem } from '~/types/Menu';
+import { DataItem } from '~/types/Menu';
 
 interface MenuItemProps {
-  data: IMenuItem;
+  data: DataItem;
 }
 
 const cx = classNames.bind(styles);
